@@ -33,35 +33,117 @@
 
   <div id="impress" data-transition-duration="1000">
 
-
-<div id="start" class="step slide markdown" data-x="10000" data-y="9000" data-z="0">
+<div id="start" class="step slide markdown" data-x="10000" data-y="8000" data-z="0">
 # Bitcoin Basics
-## Curiosity Hour by Matthias Buhler
+## Curiosity Hour
+### by Matthias Buhler
+> welcome
+</div>
+      
+<div id="abstract" class="step slide markdown" data-x="10000" data-y="9000" data-z="0">
+# Bitcoin Basics
+## Abstract
 
-Bitcoin and other "Cryptos" are real electronic money - existing, operating currencies made out of bits and trust (and sweat and tears ...)
+Bitcoin and other "Cryptos" are real electronic money - existing, operating currencies - made out of bits and trust  
+(and sweat and tears and coffee and pizza ... and carbon dioxide ...)
 
-* How is that working?
+* How is it working?
 * Why is Bitcoin failsafe and trustworthy (by now)?
 
-Let's have a deeper look into Bitcoin - step by step.
+> Let's have a deeper look into Bitcoin - step by step.
 </div>
 
-<div id="story-1" class="step slide markdown fullscreen" data-x="10000" data-y="10000" data-z="0">
-## Alice and Bob
-  ![Alice and Bob](images/Alice-and-Bob.png)
+<div id="story-1" class="step slide" data-x="10000" data-y="10000" data-z="0">
+  <div class="fullscreen" style="height: 100%; background-image: url(images/Alice-and-Bob.png); background-repeat: no-repeat;">
+    <div class="substep fade-in" style="position: absolute; top: 30px; left: 30px">
+      <p style="font-weight: bold;">Alice</p>
+      <ul>
+        <li>likes ice cream</li>
+        <li>owns Bitcoins</li>
+      </ul>
+    </div>
+
+    <div class="substep fade-in" style="position: absolute; top: 30px; right: 30px">
+      <p style="font-weight: bold;">Bob</p>
+      <ul>
+        <li>sells ice cream</li>
+        <li>likes Bitcoins</li>
+      </ul>
+    </div>
+
+    <img class="substep fade-in"
+        style="position: absolute; bottom: 50px; right: 70px; width: 250px"
+        src="images/pay-request-merchant.png" />
+
+    <img class="substep fade-in"
+        style="position: absolute; bottom: -10px; left: 250px; width: 250px"
+        src="images/pay-confirm-customer.png" />
+  </div>
 </div>
-<div id="story-2" class="step slide fullscreen" data-x="11000" data-y="10000" data-z="0" data-rotate-y="30">
+
+<div id="quenstions" class="step slide fullscreen" data-x="11000" data-y="10000" data-z="0" data-rotate-y="30">
   <h1>What's the buzz?</h1>
-  <ul style="margin-top: 100px">
-    <li class="substep fade-in">What does "owning Bitcoins" mean (technically)?</li>
-    <li class="substep fade-in">How do Bitcoins change their owner?</li>
-    <li class="substep fade-in">How are new Bitcoins created?</li>
-    <li class="substep fade-in">How to cheat?</li>
-    <li class="substep fade-in">How did it begin?</li>
-  </ul>
+  <div style="margin-top: 100px; margin-left: 225px">
+    <ul>
+      <li class="substep fade-in">What does "owning Bitcoins" mean (technically)?</li>
+      <li class="substep fade-in">How do Bitcoins change their owner?</li>
+      <li class="substep fade-in">How are new Bitcoins created?</li>
+      <li class="substep fade-in">How to cheat?</li>
+      <li class="substep fade-in">How it began? (optional)</li>
+    </ul>
+    <blockquote class="substep fade-in">Let's first learn about the stuff that forms Bitcoin ...</blockquote>
+  </div>
 </div>
   
-<div id="blockchain" class="step slide markdown" data-x="10000" data-y="10000" data-rotate-x="90">
+<div id="bitcoin-ingredients" class="step slide markdown" data-x="10000" data-y="10000" data-z="10000" data-rotate-x="90">
+# Ingredients of Bitcoin
+### an overview
+* _Software specifications_ ([protocols](https://en.bitcoin.it/wiki/Protocol_documentation), [rules](https://en.bitcoin.it/wiki/Protocol_rules)
+  and [reference implementation](https://github.com/bitcoin/bitcoin))
+* _Digital Signing_, based on private/public key pairs ([ECDSA](https://en.bitcoin.it/wiki/Protocol_documentation#Signatures))
+* _Cryptographic hashing_ ([SHA-256](https://en.bitcoin.it/wiki/Protocol_documentation#Hashes))
+* _Transactions_ (formed out of the above)
+* _The Blockchain_ (the holy grail - containing transactions)
+* _Consensus and Trust_ (as being necessary for any currency)
+
+> Lets learn more about the mystic _Blockchain_ ...
+</div>
+
+<div id="blockchain" class="step slide markdown" data-x="10000" data-y="10000" data-z="11000" data-rotate-x="90">
+# The Blockchain
+## is
+* a (well defined) datastructure
+* an _append only_ database
+* a distributed ledger
+  * a container for transactions
+  * maintained and synchronized by many parties
+* downloadable and publicly readable (no secrets)
+* as the name suggests: a chained list of _blocks_
+  * where each block
+    * is identified by its _hash_ value (over all its content)
+    * references its predecessor by its _hash_
+</div>
+  
+<div id="blockchain-model" class="step slide" data-x="10000" data-y="10000" data-z="11350" data-rotate-x="90">
+  <div class="fullscreen fade-in" style="margin-top: 300px">
+    <img src="images/blockchain-simple.png" />
+  </div>  
+</div>
+
+<div id="transaction" class="step slide markdown" data-x="10000" data-y="10000" data-z="12500" data-rotate-x="90">
+# A Transaction
+* is an assignment of a certain amount of bitcoins from one party to another one
+  * actually a random number of parties can be involved
+* is identified by its _hash_ value (over all its content)
+* referes to one or more earlier transactions as _input_
+* referes to one or more _public keys_ as _output_
+  * the new bitcoin _owners_ are the ones that hold the respective _private key_
+* is signed by the owners of the _input_ transactions
+</div>
+
+<div id="transaction-structure" class="step slide markdown" data-x="10000" data-y="10000" data-z="13500" data-rotate-x="90">
+## A transactions's data structure
+![transaction-structure](images/transaction-structure.jpg)
 </div>
 
 <div id="story-1" class="step slide markdown fullscreen" data-x="10000" data-y="10000" data-z="0" data-rotate-x="0">
@@ -71,8 +153,10 @@ Let's have a deeper look into Bitcoin - step by step.
 # Thanks for listening
 ## Sources
 * [https://www.coursera.org/learn/cryptocurrency](https://www.coursera.org/learn/cryptocurrency)
+* [https://bitcoin.org](https://bitcoin.org)
+* [https://bitcoin.it](https://bitcoin.it)
 
-(Take care of your money - and don't hold me responsible!)
+> Take care of your money :-)
 </div>
 
     </div>
