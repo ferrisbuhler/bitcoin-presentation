@@ -79,12 +79,15 @@ body {
 }
 
 /*
-    Make inactive steps a little bit transparent.
+    hide inactive steps
 */
-.impress-enabled .step {
-    margin: 0;
+.impress-enabled .step.future {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.impress-enabled .step.past {
     opacity: 0.3;
-    transition:         opacity 1s;
+    transition: opacity 0.5s;
 }
 .impress-enabled .step.active { opacity: 1 }
 
