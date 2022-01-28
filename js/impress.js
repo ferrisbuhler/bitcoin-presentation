@@ -308,7 +308,7 @@
 
             css( el, {
                 position: "absolute",
-                transform: "translate(-50%,-50%)" +
+                transform: "translate(-60%,-60%)" +
                            translate( step.translate ) +
                            rotate( step.rotate ) +
                            scale( step.scale ),

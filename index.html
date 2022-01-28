@@ -9,5 +9,327 @@
   <div>
     Coming soon
   </div>
+
+  <div id="impress" data-transition-duration="1000">
+
+<div id="start" class="step slide markdown" data-x="10000" data-y="8000" data-z="0">
+# Bitcoin Basics
+## Curiosity Hour
+### by Matthias Buhler
+> welcome
+</div>
+      
+<div id="abstract" class="step slide markdown" data-x="10000" data-y="9000" data-z="0">
+# Bitcoin Basics
+## Abstract
+
+Bitcoin and other "Cryptos" are real electronic money - existing, operating currencies - made out of bits and trust  
+(and sweat and tears and coffee and pizza ... and carbon dioxide ...)
+
+* How is it working?
+* Why is Bitcoin failsafe and trustworthy (by now)?
+
+> Let's have a deeper look into Bitcoin - step by step.
+</div>
+
+<div id="story-1" class="step slide" data-x="10000" data-y="10000" data-z="0">
+  <div class="fullscreen" style="height: 100%; margin-top: 20px; background-image: url(images/Alice-and-Bob.png); background-repeat: no-repeat;">
+    <div class="substep fade-in" style="position: absolute; top: 30px; left: 30px">
+      <p style="font-weight: bold;">Alice</p>
+      <ul>
+        <li>likes ice cream</li>
+        <li>owns Bitcoins</li>
+      </ul>
+    </div>
+
+    <div class="substep fade-in" style="position: absolute; top: 30px; right: 30px">
+      <p style="font-weight: bold;">Bob</p>
+      <ul>
+        <li>sells ice cream</li>
+        <li>likes Bitcoins</li>
+      </ul>
+    </div>
+
+    <img class="substep fade-in"
+        style="position: absolute; bottom: 50px; right: 70px; width: 250px"
+        src="images/pay-request-merchant.png" />
+
+    <img class="substep fade-in"
+        style="position: absolute; bottom: -10px; left: 250px; width: 250px"
+        src="images/pay-confirm-customer.png" />
+  </div>
+</div>
+
+<div id="quenstions" class="step slide fullscreen" data-x="11000" data-y="10000" data-z="0" data-rotate-y="30">
+  <h1>What's the buzz?</h1>
+  <div style="margin-top: 100px; margin-left: 225px">
+    <ul>
+      <li class="substep fade-in">What does "owning Bitcoins" mean (technically)?</li>
+      <li class="substep fade-in">How do Bitcoins change hands?</li>
+      <li class="substep fade-in">How are new Bitcoins created?</li>
+      <li class="substep fade-in">How to cheat?</li>
+      <li class="substep fade-in">How it began? (optional)</li>
+    </ul>
+    <blockquote class="substep fade-in">Let's first learn about the stuff that forms Bitcoin ...</blockquote>
+  </div>
+</div>
+  
+<div id="bitcoin-ingredients" class="step slide markdown" data-x="10000" data-y="10000" data-z="9675" data-rotate-x="90">
+# Ingredients of Bitcoin
+### an overview
+* _Software specifications_ ([protocols](https://en.bitcoin.it/wiki/Protocol_documentation), [rules](https://en.bitcoin.it/wiki/Protocol_rules)
+  and [reference implementation](https://github.com/bitcoin/bitcoin))
+* _Digital Signing_, based on private/public key pairs ([ECDSA](https://en.bitcoin.it/wiki/Protocol_documentation#Signatures))
+* _Cryptographic hashing_ ([SHA-256](https://en.bitcoin.it/wiki/Protocol_documentation#Hashes))
+* _Transactions_ (formed out of the above)
+* The _Blockchain_ (the holy grail - containing transactions)
+* A _Network_
+* _Consensus, Trust and Privacy_ (as being common for any currency)
+
+> But Bitcoin also excels in its ...
+</div>
+  
+<div id="non-ingredients" class="step slide markdown" data-x="10000" data-y="10000" data-z="10000" data-rotate-x="90">
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+### non-ingredients
+* governments or politics
+* a central authority
+  * (maybe except of the developer community)
+* banks and accounts
+* personal identification
+* garlic
+
+> Lets now learn more about the mystic _Blockchain_ ...
+</div>
+
+<div id="blockchain" class="step slide markdown" data-x="10000" data-y="10000" data-z="11000" data-rotate-x="90">
+# The Blockchain
+## is
+* a (well defined) datastructure
+* an _append only_ database
+* a distributed ledger
+  * a container for transactions
+  * maintained and synchronized by many parties
+* downloadable and publicly readable (no secrets)
+* as the name suggests: a chained list of _blocks_
+  * where each block
+    * is identified by its _hash_ value (over all its content)
+    * references its predecessor by its _hash_
+</div>
+
+<div id="blockchain-model" class="step slide markdown" data-x="10000" data-y="10000" data-z="11330" data-rotate-x="90">
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+![transaction-structure](images/blockchain-simple.png)
+</div>
+
+<div id="transaction" class="step slide markdown" data-x="10000" data-y="10000" data-z="12500" data-rotate-x="90">
+# A Transaction
+* is an assignment of a certain amount of bitcoins from one party to another one
+  * actually a random number of parties can be involved
+* is identified by its _hash_ value (over all its content)
+* referes to one or more earlier transactions as _input_
+* referes to one or more _public keys_ as _output_
+  * the new bitcoin _owners_ are the ones that hold the respective _private key_
+* is signed by the owners of the _input_ transactions
+</div>
+
+<div id="transaction-structure" class="step slide markdown fullscreen" data-x="10000" data-y="10000" data-z="13500" data-rotate-x="90">
+## A transactions's data structure
+![transaction-structure](images/transaction-structure.jpg)
+</div>
+
+<div id="live-transaction" class="step slide markdown" data-x="10000" data-y="10000" data-z="13700" data-rotate-x="90">
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+` `  
+[... what about a live example?](https://live.blockcypher.com/btc/tx/22f918952e4e5485d46d3953b27ea38dacad9ea69852d06023d32fb974c90f41/)
+</div>
+
+<div id="story-2" class="step slide fullscreen" data-x="10000" data-y="10000" data-z="0" data-rotate-x="0">
+</div>
+
+<div id="payment-1" class="step slide markdown" data-x="10000" data-y="11000" data-z="0" data-rotate-x="0">
+# Some more datail
+## What happens in Bob's and Alice's wallet app?
+* simple version
+  * Bob's wallet app displays a QR code with a public key (the private counterpart is stored in the wallet)
+* advanced version
+  * Bob's wallet app creates a "Transaction Request",
+  * uploads that to a special server and
+  * displays a QR code with an URL pointing to that request.
+   Apart from the public key the request data also contains the price to pay and informative fields (eventually a bill as PDF).
+
+> continued on next page ...
+</div>
+
+<div id="payment-2" class="step slide markdown" data-x="10000" data-y="12000" data-z="0" data-rotate-x="0">
+### ... anyway
+> ... payment continued
+
+* Alice scans the QR code with her wallet app.
+* The app detects the data type. If its a request URL, the app downloads the data from the server.
+* The app displays the available data and asks Alice for completion and/or confirmation.
+* Alice's wallet app creates the transaction. For this only Bob's public key and the amount of Bitcoin parts are necessary. 
+</div>
+
+<div id="transaction-building" class="step slide markdown" data-x="10000" data-y="13000" data-z="0" data-rotate-x="0">
+# How is the transaction build?
+* __The transaction always has to be build by the spender__ (Alice).
+* Alice's wallet app looks up one or more previous (unspent!) transactions to her name (key!)
+  * These transactions (resp. their hash) go into the new transaction's __input__.
+  * The wallet creates and adds a __signing__ of the previous transaction with Alice's __private key__
+    (that the wallet needs to have in store).
+* Bob's __public key__ and the purchase price go into the output.
+* The __change amount__ with Alice's __public key__ goes also into the output.
+* The wallet suggests a certain amount as __mining fee__ (some Euro cent).
+  * You can increase this amount in order to boost the priority.
+* Finally the transaction's __hash value__ gets calculated.
+* Then the transaction is transmitted to a __Bitcoin node__.
+
+> The node is a part of ...
+</div>
+
+<div id="bitcoin-network" class="step slide markdown" data-x="10000" data-y="14000" data-z="0" data-rotate-x="0">
+# The Bitcoin-Network ...
+* are thousands of node instances, running free of charge or reward by volonteers.
+  * There are different types of nodes: full, super, light, mining nodes, etc.
+  * They differ in the amount of data that hey store and process and in the actions they can take.
+* The nodes form a __P2P network__ over the internet.
+* A node's duties are:
+  * Maintaining a __list of other nodes__.
+  * Holding a __copy of the Blockchain__ (or at least parts of it).
+  * __Validation__ (checking, accepting or refusing) of __new blocks__.
+  * The same for __new transactions__.
+  * Distributing all kind of __valid__ data items to other nodes.
+  
+> And not to forget ...
+</div>
+
+<div id="block-mining" class="step slide markdown" data-x="10000" data-y="15000" data-z="0" data-rotate-x="0">
+# Mining of new blocks
+
+* Collect a bunch of new transactions (re-assert they are valid)
+* Fill the mandatory metadata and calculate the hash value.
+  * Don't forget to grant yourself the mining fees and the mining reward!
+* Solve the puzzle.
+
+> ... eh, what?
+
+* The hash of a block needs to meet certain criteria to be considered valid.
+
+> ... ooh, and how to do that?
+
+* Trial & error! There are a number of meaningless fields in the block (_nonce_) that can be randomly set
+  in order to change the hash value.
+
+> And what if another miner finds a valid block before me?
+
+* Then you lost, next round!
+</div>
+
+<div id="mining-challange" class="step slide markdown" data-x="10000" data-y="16000" data-z="0" data-rotate-x="0">
+# Mining challange
+## What is that particularly?
+* The block is only considered valid if the hash value (read as an integer number) is less than a certain limit (called _difficulty_).
+* The difficulty has to be recalculated every 2016 created blocks (~ 2 weeks).
+* It depends on the time that the miners needed to create this amount of blocks.
+* The _more efficient_ the miners were the _more difficult_ the challange gets.
+* This calculation is determined by the _amount of transactions_ that is raised and the _computer power_
+  that is deployed to satisfy that demand.
+</div>
+
+<div id="need-of-mining-challange" class="step slide markdown" data-x="10000" data-y="17000" data-z="0" data-rotate-x="0">
+# Why is the mining challange necessary?
+
+* The creation of new blocks is the most sensible part of the process. 
+* The goal is to have many miners competing with each other in
+  * being as __efficient__ as possible (the mining award does not depend on the number of transactions that a block contains)
+  * proofing their loyality to the rules by setting a stake.
+* The __stake__ is to invest in computer hardware and electricity consumption. This is called "proof-of-work".
+  * Honest miners with sufficient hardware and great endurence will compensate their efforts - and maybe more than that!
+  * Fraud miners risk their blocks not being accepted by the network.
+* The mining reward is the only mechanism to create new Bitcoins.
+  * It decreases according to a rule: every 210.000 blocks it gets halved. Currently the reward is 6,25 BTC (~ 190.000 €).
+  * In the near future it will be ceased completely.
+</div>
+
+<div id="critisism" class="step slide markdown" data-x="10000" data-y="18000" data-z="0" data-rotate-x="0">
+# Critisism and evaluation of Bitcoin
+### The downside
+* No "proof-of-sustainibility" - each bitcoin comes with an amount of CO².
+* Great mining activities in poor countries with cheap energy prices
+  * Public power supply gets exhausted.
+* Attempts for governmental regulation scared potential users.
+  * Bitcoin didn't make it to an every day's payment vehicle, but ...
+  * ... it is established well for speculation and money laundry.
+</div>
+
+<div id="evaluation" class="step slide markdown" data-x="10000" data-y="19000" data-z="0" data-rotate-x="0">
+# Critisism and evaluation of Bitcoin
+### The not so down sides
+* Bitcoin is a great example of civil engagement resisting governmental control for many years.
+* Bitcoin pushed technology to provide and societies to accept a new way of economy that is not controlled by authorities.
+* ... and it is a great data science research area (Big Data, AI, ...)
+### What else
+* In the lee of Bitcoin many similar projects evolved (so called "Altcoins"), e.g. Ethereum, Stellar, ...
+  * Many of these alternatives strive to overcome Bitcoins downsides and keep its benefits,
+    e.g. by non-exhaustive consensus mechanisms, binding their exchange rates to fiat currencies, etc.
+  * Others extended the use cases by digital certificates or contracts.
+</div>
+
+<div id="story-3" class="step slide fullscreen" data-x="10000" data-y="10000" data-z="0" data-rotate-x="0">
+</div>
+
+<div id="sources" class="step slide markdown" data-x="10000" data-y="9700" data-z="1000">
+# Thanks for listening
+## Sources
+* [https://www.coursera.org/learn/cryptocurrency](https://www.coursera.org/learn/cryptocurrency)
+* [https://bitcoin.org](https://bitcoin.org)
+* [https://bitcoin.it](https://bitcoin.it)
+
+> Take care of your money :-)
+</div>
+
+    </div>
+<!-------------------------------------------------------------------------------------------------->
+
+  <div id="impress-toolbar"></div>
+  <div id="impress-help"></div>
+
+
+  <!-- Extra modules
+      Load highlight.js, mermaid.js and markdown.js from extras.
+      See also src/plugins/extras/extras.js -->
+  <script type="text/javascript" src="js/highlight.pack.js"></script>
+  <script type="text/javascript" src="js/mermaid.min.js"></script>
+  <script type="text/javascript" src="js/markdown.js"></script>
+
+  <!--
+      To make all described above really work, you need to include impress.js in the page.
+      You also need to call a `impress().init()` function to initialize impress.js presentation.
+      And you should do it in the end of your document. 
+  -->
+  <script type="text/javascript" src="js/impress.js"></script>
+  <script>impress().init();</script>
 </body>
 </html>
